@@ -1,0 +1,2 @@
+# R5T.E0047
+Experiment in creating type and method names that uniquely identify .NET C# types according to the rules of XML documentation ID strings.
