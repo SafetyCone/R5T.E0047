@@ -22,27 +22,21 @@ namespace R5T.E0047
 {
     public class HostStartup : HostStartupBase
     {
-
         public override Task ConfigureConfiguration(IConfigurationBuilder configurationBuilder)
-        {
-        
+        {   
             // Do nothing.
         
             return Task.CompletedTask;
         }
-
 
         protected override Task ConfigureServices(IServiceCollection services, IProvidedServiceActionAggregation providedServicesAggregation)
         {
             // Inputs.
             var executionSynchronicityProviderAction = Instances.ServiceAction.AddConstructorBasedExecutionSynchronicityProviderAction(Synchronicity.Synchronous);
 
-
-            var organizationProviderAction = Instances.ServiceAction.AddOrganizationProviderAction(); // Rivet organization.
-
+            var organizationProviderAction = Instances.ServiceAction.AddOrganizationProviderAction(); // Rivet organization
 
             var rootOutputDirectoryPathProviderAction = Instances.ServiceAction.AddConstructorBasedRootOutputDirectoryPathProviderAction(@"C:\Temp\Output");
-
 
             // Services platform.
             var servicesPlatformRequiredServiceActionAggregation = new ServicesPlatformRequiredServiceActionAggregation
@@ -57,28 +51,24 @@ namespace R5T.E0047
                 RootOutputDirectoryPathProviderAction = rootOutputDirectoryPathProviderAction,
             };
 
-
             var servicesPlatform = Instances.ServiceAction.AddProvidedServiceActionAggregation(
                 servicesPlatformRequiredServiceActionAggregation);
 
-
         
             // Add services here.
-            var serviceAction = Instances.ServiceAction.AddXAction();
-
+            //var serviceAction = Instances.ServiceAction.AddXAction();
 
             // Run.
             services.MarkAsServiceCollectonConfigurationStatement()
                 .Run(servicesPlatform.ConfigurationAuditSerializerAction)
                 .Run(servicesPlatform.ServiceCollectionAuditSerializerAction)
                 ;
+
             return Task.CompletedTask;
         }
 
-
         protected override Task FillRequiredServiceActions(IRequiredServiceActionAggregation requiredServiceActions)
         {
-        
             // Do nothing since none are required.
         
             return Task.CompletedTask;
