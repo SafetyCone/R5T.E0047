@@ -1,11 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\R5T.E0047.F001\R5T.E0047.F001.csproj" />
   </ItemGroup>
-
 </Project>

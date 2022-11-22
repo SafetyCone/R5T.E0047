@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <ItemGroup>
     <ProjectReference Include="..\..\..\R5T.Magyar\source\R5T.Magyar\R5T.Magyar.csproj" />
     <ProjectReference Include="..\..\..\R5T.D0088\source\R5T.D0088.X001\R5T.D0088.X001.csproj" />
@@ -19,15 +18,13 @@
     <ProjectReference Include="..\R5T.E0047.F002\R5T.E0047.F002.csproj" />
     <ProjectReference Include="..\R5T.E0047.Z001\R5T.E0047.Z001.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Code\Functionality-Draft\Classes\" />
     <Folder Include="Code\Functionality-Draft\Interfaces\" />
   </ItemGroup>
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
   </PropertyGroup>
-
 </Project>
